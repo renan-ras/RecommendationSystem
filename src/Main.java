@@ -222,5 +222,24 @@ public class Main {
         book1.removeUserFromWaitingList(); //-> Carlos foi removido(a) da lista de espera.
         book1.removeUserFromWaitingList(); //-> Não há nada para ser removido, a lista de espera está vazia.
         //endregion
+
+        //Árvore binária
+        BinaryTree myTree = new BinaryTree();
+
+        myTree.insert(book1);
+        myTree.insert(book2);
+        myTree.insert(book3);
+        myTree.insert(book4);
+        myTree.insert(book5);
+        myTree.insert(book6);
+        myTree.insert(book7);
+        myTree.insert(book8);
+        myTree.insert(book9);
+        myTree.insert(book10);
+
+        System.out.println("Verificando resultados (debug)");
+
+
+
     }
 }

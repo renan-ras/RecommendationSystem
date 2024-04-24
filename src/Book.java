@@ -7,9 +7,9 @@ public class Book {
     private String title;
     private String author;
     private int year;
-    private Queue<User> waitingList;
-    private Set<Book> recsForBook;
-    private RecommendationSystem rs;
+    private final Queue<User> waitingList;
+    private final Set<Book> recsForBook;
+    private final RecommendationSystem rs;
 
     public Book(String bookTitle, String bookAuthor, int bookYear){
         this.title = bookTitle;

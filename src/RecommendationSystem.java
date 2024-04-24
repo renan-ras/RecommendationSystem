@@ -10,7 +10,7 @@ import java.util.Stack;
  * baseadas em seu histórico de leitura.
  */
 public class RecommendationSystem {
-    private Map<Book, Set<Book>> graph;
+    private final Map<Book, Set<Book>> graph;
 
     public RecommendationSystem() {
         this.graph = new HashMap<>();

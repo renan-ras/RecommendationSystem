@@ -3,7 +3,7 @@ import java.util.Stack;
 public class User {
     private String name;
     private String email;
-    private Stack<Book> readingHistory;
+    private final Stack<Book> readingHistory;
 
     public User(String userName, String userEmail){
         this.name = userName;
@@ -30,10 +30,6 @@ public class User {
     public Stack<Book> getReadingHistory() {
         return readingHistory;
     }
-
-//    public void setReadingHistory(Stack<Book> readingHistory) {
-//        this.readingHistory = readingHistory;
-//    }
 
     // Sobrescrita do método toString
     @Override
