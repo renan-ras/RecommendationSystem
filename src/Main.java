@@ -106,10 +106,10 @@ public class Main {
 
         //Exibindo recomendações baseadas no histórico de leitura de cada usuário
         //As recomendações incluem apenas livros que não foram lidos pelo usuário
-        System.out.println("Recomendações para " + user1.name + ":");
+        System.out.println("Recomendações para " + user1.getName() + ":");
         Set<Book> recommendationsUser1 = rs.getRecommendations(user1);
         for (Book b : recommendationsUser1) {
-            System.out.println(b.title);
+            System.out.println(b.getTitle());
         }
 //        ->
 //        Recomendações para João
@@ -119,10 +119,10 @@ public class Main {
 //        O Conto da Aia
 
         System.out.println();
-        System.out.println("Recomendações para " + user2.name + ":");
+        System.out.println("Recomendações para " + user2.getName() + ":");
         Set<Book> recommendationsUser2 = rs.getRecommendations(user2);
         for (Book b : recommendationsUser2) {
-            System.out.println(b.title);
+            System.out.println(b.getTitle());
         }
 //        ->
 //        Recomendações para Maria
@@ -130,10 +130,10 @@ public class Main {
 //        Neuromancer
 
         System.out.println();
-        System.out.println("Recomendações para " + user3.name + ":");
+        System.out.println("Recomendações para " + user3.getName() + ":");
         Set<Book> recommendationsUser3 = rs.getRecommendations(user3);
         for (Book b : recommendationsUser3) {
-            System.out.println(b.title);
+            System.out.println(b.getTitle());
         }
 //        ->
 //        Recomendações para Carlos
@@ -149,7 +149,7 @@ public class Main {
 
         //Imprimir histórico, adicionar e remover livro e imprimir novamente
         //Imprimir histórico de leitura do usuário 1 (João)
-        System.out.println("Histórico de leitura do usuário " + user1.name + ":");
+        System.out.println("Histórico de leitura do usuário " + user1.getName() + ":");
         user1.printReadingHistory();
 //        ->
 //        Histórico de leitura do usuário João
@@ -161,7 +161,7 @@ public class Main {
 
         //Imprimir histórico de leitura do usuário 1 (João)
         System.out.println();
-        System.out.println("Histórico de leitura do usuário " + user1.name + ":");
+        System.out.println("Histórico de leitura do usuário " + user1.getName() + ":");
         user1.printReadingHistory();
 //        ->
 //        Histórico de leitura do usuário João
@@ -177,7 +177,7 @@ public class Main {
 
         //Imprimir histórico de leitura do usuário 1 (João)
         System.out.println();
-        System.out.println("Histórico de leitura do usuário " + user1.name + ":");
+        System.out.println("Histórico de leitura do usuário " + user1.getName() + ":");
         user1.printReadingHistory();
 //        ->
 //        Histórico de leitura do usuário João
@@ -199,7 +199,7 @@ public class Main {
         System.out.println("===========================================");
         System.out.println();
 
-        System.out.println("Lista de espera para o livro: " + book1.title);
+        System.out.println("Lista de espera para o livro: " + book1.getTitle());
         book1.printWaitingList(); //-> A lista de espera está vazia.
         System.out.println();
         book1.addUserToWaitingList(user2); //Maria

@@ -28,7 +28,7 @@ public class RecommendationSystem {
     // Método para obter recomendações para um usuário baseado em seu histórico de leitura
     public Set<Book> getRecommendations(User user) {
         Set<Book> recommendations = new HashSet<>();
-        Stack<Book> history = user.readingHistory; // Obtém o histórico de leitura do usuário
+        Stack<Book> history = user.getReadingHistory(); // Obtém o histórico de leitura do usuário
         Set<Book> readBooks = new HashSet<>(history); // Transforma a pilha de livros lidos em um conjunto para pesquisa rápida.
 
         for (Book book : history) { // Percorre o histórico de livros lidos

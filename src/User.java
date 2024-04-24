@@ -1,17 +1,39 @@
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Stack;
 
 public class User {
-    String name;
-    String email;
-    Stack<Book> readingHistory;
+    private String name;
+    private String email;
+    private Stack<Book> readingHistory;
 
     public User(String userName, String userEmail){
         this.name = userName;
         this.email = userEmail;
         this.readingHistory = new Stack<>();
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Stack<Book> getReadingHistory() {
+        return readingHistory;
+    }
+
+//    public void setReadingHistory(Stack<Book> readingHistory) {
+//        this.readingHistory = readingHistory;
+//    }
 
     // Sobrescrita do método toString
     @Override
