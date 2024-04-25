@@ -98,11 +98,9 @@ public class Main {
         //endregion
 
         //region Recomendações por usuário (HashMap)
-        System.out.println();
-        System.out.println("=============================================");
+        System.out.println("\n=============================================");
         System.out.println("Recomendações de livros por usuário (HashMap)");
-        System.out.println("=============================================");
-        System.out.println();
+        System.out.println("=============================================\n");
 
         //Exibindo recomendações baseadas no histórico de leitura de cada usuário
         //As recomendações incluem apenas livros que não foram lidos pelo usuário
@@ -141,11 +139,9 @@ public class Main {
         //endregion
 
         //region Teste do histórico de leitura do usuário (Pilha)
-        System.out.println();
-        System.out.println("================================================");
+        System.out.println("\n================================================");
         System.out.println("Teste do histórico de leitura do usuário (Pilha)");
-        System.out.println("================================================");
-        System.out.println();
+        System.out.println("================================================\n");
 
         //Imprimir histórico, adicionar e remover livro e imprimir novamente
         //Imprimir histórico de leitura do usuário 1 (João)
@@ -193,11 +189,9 @@ public class Main {
         //endregion
 
         //region Teste da lista de espera de um livro (Fila)
-        System.out.println();
-        System.out.println("===========================================");
+        System.out.println("\n===========================================");
         System.out.println("Teste da lista de espera de um livro (Fila)");
-        System.out.println("===========================================");
-        System.out.println();
+        System.out.println("===========================================\n");
 
         System.out.println("Lista de espera para o livro: " + book1.getTitle());
         book1.printWaitingList(); //-> A lista de espera está vazia.
@@ -224,6 +218,10 @@ public class Main {
         //endregion
 
         //Árvore binária
+        System.out.println("\n===========================================");
+        System.out.println("Teste da árvore binária");
+        System.out.println("===========================================\n");
+
         BinaryTree myTree = new BinaryTree();
 
         myTree.insert(book1);
@@ -237,9 +235,18 @@ public class Main {
         myTree.insert(book9);
         myTree.insert(book10);
 
-        System.out.println("Verificando resultados (debug)");
+        //Busca
+        System.out.println("A busca de \"Neuromancer\" retornou: " + myTree.search("Neuromancer")); //true
+        System.out.println("A busca de \"duna\" retornou: " + myTree.search("duna")); //true
+        System.out.println("A busca de \"Crepusculo\" retornou: " + myTree.search("Crepusculo") + "\n"); //false
 
+        //Mostrar
+        System.out.println("Árvore com 10 livros:");
+        myTree.show();
 
-
+        //Remover
+        myTree.remove("O Conto da Aia");
+        System.out.println("\nÁrvore com 9 livros (sem \"O Conto da Aia\"):");
+        myTree.show();
     }
 }
