@@ -1,0 +1,39 @@
+Lista de livros cadastrados e suas recomendações.
+
+1 = ("1984", "George Orwell", 1949);
+2 = ("Fahrenheit 451", "Ray Bradbury", 1953);
+3 = ("Admirável Mundo Novo", "Aldous Huxley", 1932);
+4 = ("O Conto da Aia", "Margaret Atwood", 1985);
+5 = ("A Mão Esquerda da Escuridão", "Ursula K. Le Guin", 1969);
+6 = ("Duna", "Frank Herbert", 1965);
+7 = ("Fundação", "Isaac Asimov", 1951);
+8 = ("Neuromancer", "William Gibson", 1984);
+9 = ("Snow Crash", "Neal Stephenson", 1992);
+10 =("Criptonomicon", "Neal Stephenson", 1999);
+
+Livro 	- Recomendações
+1 	- 2	3
+2 	- 1	4
+3 	- 1	2
+4 	- 2	5
+5 	- 6	4
+6 	- 7	5
+7 	- 6	8
+8 	- 9	7
+9 	- 8	10
+10	- 9	8
+
+
+
+Lógica das recomendações:
+Criar uma rede interconectada de pelo menos duas recomendações para cada livro.
+Baseada em proximidades de estilo, temática, ano de publicação ou autor.
+
+
+"1984" e "Admirável Mundo Novo" abordam distopias futuristas ou sociedades opressivas.
+
+"Duna" e "A Mão Esquerda da Escuridão" são ambos ficções científicas que exploram temas sociopolíticos.
+
+"Neuromancer" e "Snow Crash" são conectados por suas contribuições ao gênero cyberpunk.
+
+"Criptonomicon" e "Snow Crash" são do mesmo autor, Neal Stephenson.

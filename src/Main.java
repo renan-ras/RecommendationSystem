@@ -5,6 +5,12 @@
 *
 * Para facilitar a correção foram adicionados comentários identificando o título dos livros e
 * forncecidas algumas saídas do console após os símbolos "->"
+*
+* Para auxílio a compreensão e visualização do código, veja os anexos:
+* 1 - Lista de livros cadastrados e suas recomendações
+* 2 - Grafo Livros e Recomendações (Com direção, Sem peso)
+* 3 - Árvore binária com 10 livros
+* 4 - Árvore binária com 9 livros (sem O Conto da Aia)
 * */
 
 import java.util.HashSet;
@@ -29,6 +35,7 @@ public class Main {
         //endregion
 
         //region Adicionando duas recomendações para cada livro
+        //Mais detalhes sobre as recomendações no anexo 1 - Lista de livros cadastrados e suas recomendações
         Set<Book> recsForBook1 = new HashSet<>(); //Armazenará as recomendações para o livro: 1984
         recsForBook1.add(book2); //Adiciona recomendação para o livro 1984: Fahrenheit 451
         recsForBook1.add(book3); //Adiciona recomendação para o livro 1984: Admirável Mundo Novo
@@ -223,7 +230,15 @@ public class Main {
         System.out.println("SOMATIVA 2");
         System.out.println("===========================================\n");
 
-        //Árvore binária
+        /*
+        * Para auxílio a compreensão e visualização do código, veja os anexos:
+        * 1 - Lista de livros cadastrados e suas recomendações
+        * 2 - Grafo Livros e Recomendações (Com direção, Sem peso)
+        * 3 - Árvore binária com 10 livros
+        * 4 - Árvore binária com 9 livros (sem O Conto da Aia)
+        * */
+
+        //region Árvore binária
         System.out.println("\n===========================================");
         System.out.println("Teste da árvore binária");
         System.out.println("===========================================\n");
@@ -243,30 +258,63 @@ public class Main {
 
         //Busca
         System.out.println("A busca de \"Neuromancer\" retornou: " + myTree.search("Neuromancer")); //true
+        //Encontra o título "duna" ignorando maiúscula ("Duna")
         System.out.println("A busca de \"duna\" retornou: " + myTree.search("duna")); //true
         System.out.println("A busca de \"Crepusculo\" retornou: " + myTree.search("Crepusculo") + "\n"); //false
 
         //Mostrar
+        //Para melhor visualização ver anexo 3 - Árvore binária com 10 livros.png
         System.out.println("Árvore com 10 livros:");
         myTree.show();
 
         //Remover
         myTree.remove("O Conto da Aia");
+        //Para melhor visualização ver anexo 4 - Árvore binária com 9 livros (sem O Conto da Aia).png
         System.out.println("\nÁrvore com 9 livros (sem \"O Conto da Aia\"):");
         myTree.show();
+        //endregion
 
-
-        //Árvore binária
+        //region Djikstra
         System.out.println("\n===========================================");
         System.out.println("Teste Djikstra");
         System.out.println("===========================================\n");
 
-        // Chamar djikstraSimples
-        Map<Book, Integer> resultado = Djikstra.djikstraSimples(rs.getGraph(), book1);
+        //***
+        //Obter níveis de relacionamento para o livro 1
+        //***
+        Map<Book, Integer> djikstraBook1 = Djikstra.djikstraSimples(rs.getGraph(), book1);
 
-        // Imprimir os resultados
-        for (Map.Entry<Book, Integer> entrada : resultado.entrySet()) {
+        //Imprimir a distância entre o livro 1 e os demais
+        System.out.println("Relacionamentos do livro: " + book1);
+        for (Map.Entry<Book, Integer> entrada : djikstraBook1.entrySet()) {
             System.out.println("Distância do " + book1.getTitle() + " para " + entrada.getKey().getTitle() + " é " + entrada.getValue());
         }
+        /*
+        * Ver anexo 2 - Grafo Livros e Recomendações (Com direção, Sem peso).png
+        * Note que a distância do livro 1 até o 10 é de 8, pois é um grafo com direção
+        * o 10 tem conexão para o 8, mas o contrário não é verdadeiro
+        * */
+
+        //***
+        // Teste de recomendações para usuário baseado em seu histórico de leitura
+        //***
+        System.out.println("\nHistórico de leitura de " + user2.getName() + ":");
+        user2.printReadingHistory();
+
+        //Obter todas as recomendações a partir do histórico de leitura
+        Map<Book, Integer> djikstraUser2 = Djikstra.djikstraRecommendations(rs.getGraph(), user2.getReadingHistory());
+
+        System.out.println("\nAs recomendações para " + user2.getName() + " são:");
+        for (Map.Entry<Book, Integer> entrada : djikstraUser2.entrySet()) {
+            System.out.println("Nível " + entrada.getValue() + " - " + entrada.getKey());
+        }
+
+        System.out.println("Quanto menor o nível mais forte é a recomendação!");
+
+        /*Faz a união das recomendações djikstraSimples de cada livro
+        * para livros repetidos mantém o de menor distância
+        * não inclui nas recomendações os livros já lidos*/
+
+        //endregion
     }
 }
