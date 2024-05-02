@@ -8,6 +8,7 @@
 * */
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class Main {
@@ -217,6 +218,11 @@ public class Main {
         book1.removeUserFromWaitingList(); //-> Não há nada para ser removido, a lista de espera está vazia.
         //endregion
 
+        //Código adicional da somativa 2
+        System.out.println("\n===========================================");
+        System.out.println("SOMATIVA 2");
+        System.out.println("===========================================\n");
+
         //Árvore binária
         System.out.println("\n===========================================");
         System.out.println("Teste da árvore binária");
@@ -248,5 +254,19 @@ public class Main {
         myTree.remove("O Conto da Aia");
         System.out.println("\nÁrvore com 9 livros (sem \"O Conto da Aia\"):");
         myTree.show();
+
+
+        //Árvore binária
+        System.out.println("\n===========================================");
+        System.out.println("Teste Djikstra");
+        System.out.println("===========================================\n");
+
+        // Chamar djikstraSimples
+        Map<Book, Integer> resultado = Djikstra.djikstraSimples(rs.getGraph(), book1);
+
+        // Imprimir os resultados
+        for (Map.Entry<Book, Integer> entrada : resultado.entrySet()) {
+            System.out.println("Distância do " + book1.getTitle() + " para " + entrada.getKey().getTitle() + " é " + entrada.getValue());
+        }
     }
 }

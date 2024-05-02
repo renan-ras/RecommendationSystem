@@ -8,53 +8,53 @@ public class Book {
     private String author;
     private int year;
     private final Queue<User> waitingList;
-    private final Set<Book> recsForBook;
-    private final RecommendationSystem rs;
+//    private final Set<Book> recsForBook;
+//    private final RecommendationSystem rs;
 
     public Book(String bookTitle, String bookAuthor, int bookYear){
         this.title = bookTitle;
         this.author = bookAuthor;
         this.year = bookYear;
         this.waitingList = new LinkedList<>();
-        this.recsForBook = new HashSet<>();
-        this.rs = new RecommendationSystem();
+//        this.recsForBook = new HashSet<>();
+//        this.rs = new RecommendationSystem();
     }
 
     public String getTitle() {
         return title;
     }
 
-    public String getAuthor() {
-        return author;
-    }
+//    public String getAuthor() {
+//        return author;
+//    }
+//
+//    public int getYear() {
+//        return year;
+//    }
 
-    public int getYear() {
-        return year;
-    }
-
-    public Queue<User> getWaitingList() {
-        return waitingList;
-    }
-
-    public Set<Book> getRecsForBook() {
-        return recsForBook;
-    }
-
-    public RecommendationSystem getRs() {
-        return rs;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
+//    public Queue<User> getWaitingList() {
+//        return waitingList;
+//    }
+//
+//    public Set<Book> getRecsForBook() {
+//        return recsForBook;
+//    }
+//
+//    public RecommendationSystem getRs() {
+//        return rs;
+//    }
+//
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+//
+//    public void setAuthor(String author) {
+//        this.author = author;
+//    }
+//
+//    public void setYear(int year) {
+//        this.year = year;
+//    }
 
     @Override
     public String toString(){

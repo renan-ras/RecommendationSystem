@@ -16,6 +16,10 @@ public class RecommendationSystem {
         this.graph = new HashMap<>();
     }
 
+    public HashMap<Book, Set<Book>> getGraph() {
+        return (HashMap<Book, Set<Book>>) graph;
+    }
+
     // Método para adicionar um livro e suas recomendações ao grafo
     public void addBookAndRecommendations(Book book, Set<Book> recommendations) {
         // Garantindo que cada livro tenha pelo menos duas recomendações
